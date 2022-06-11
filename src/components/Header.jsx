@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import Menu from '@components/Menu';
 import MyOrder from '@containers/MyOrder';
-import MobileMenu from '@containers/MobileMenu';
 import menu from '@icons/icon_menu.svg';
 import logo from '@logos/logo_yard_sale.svg';
 import AppContext from '@context/AppContext';
@@ -13,7 +12,6 @@ import styles from '@styles/Header.module.scss';
 const Header = () => {
   const [toggle, setToggle] = useState(false);
   const [toggleOrders, setToggleOrders] = useState(false);
-  const [toggleMmenu, setToggleMmenu] = useState(false);
   const {state} = useContext(AppContext);
 
   const handleToggle = () => {
@@ -23,7 +21,7 @@ const Header = () => {
   return (
     <div className={styles.divContainer}>
       <nav className={styles.Nav}>
-        <img src={menu.src} alt="menu" className={styles.menu} onClick={() => setToggleMmenu(!toggleMmenu)} />
+        <img src={menu.src} alt="menu" className={styles.menu} />
         <div className={styles['navbar-left']}>
           <Link href="/">
             <Image src={logo} alt="logo" className={styles['nav-logo']} />
@@ -71,7 +69,6 @@ const Header = () => {
         {toggle && <Menu />}
         
       </nav>
-      {toggleMmenu && <MobileMenu />}
     </div>
   );
 };
