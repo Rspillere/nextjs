@@ -14,11 +14,11 @@ const OrderItem = ({ product }) => {
 	return (
 		<div className={styles.OrderItem}>
 			<figure>
-				<Image src={product?.images[0]} alt={product?.title} width="100%" height="100%" layout="responsive" />
+				<Image src={product?.images[0]} alt={product?.title} width="100%" height="100%" />
 			</figure>
 			<p>{product?.title}</p>
 			<p>${product?.price}</p>
-			<Image src={close} alt="close" onClick={() => handleRemove(product)} width="100%" height="100%" layout="responsive" />
+			<Image src={close} alt="close" onClick={() => handleRemove(product)} />
 		</div>
 	);
 };

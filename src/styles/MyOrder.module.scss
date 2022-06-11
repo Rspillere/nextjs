@@ -33,6 +33,7 @@
 .title {
 	font-size: $--lg;
 	font-weight: bold;
+	margin: 18px;
 }
 .order {
 	display: grid;
@@ -57,7 +58,10 @@
 	font-weight: bold;
 }
 
-.primary-button {
+.primary-button a:nth-child(1){
+	display: block;
+	text-align: center;
+	justify-items: center;
 	background-color: $--hospital-green;
 	border-radius: 8px;
 	border: none;
